@@ -15,6 +15,7 @@ st.markdown("""
         margin: 0 auto;
         padding: 40px;
         background-color: #f8f9fa;
+        color: #333333;
         border-radius: 15px;
         box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
@@ -230,7 +231,7 @@ def main():
                 st.session_state.scan_history = []
 
                 st.markdown("""
-                <div style="background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 5px; padding: 15px; margin: 20px 0;">
+                <div style="background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 5px; padding: 15px; margin: 20px 0; color: #333333;">
                     <strong>✅ Registration Complete!</strong><br>
                     Welcome to Brain Tumor Detection System. You can now upload MRI scans and access your medical history.
                 </div>

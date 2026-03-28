@@ -30,6 +30,7 @@ st.markdown("""
         padding: 45px 30px;
         text-align: center;
         background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        color: #333333;
         margin: 25px 0;
         transition: all 0.3s ease;
         box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -42,6 +43,7 @@ st.markdown("""
     }
     .result-card {
         background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        color: #333333;
         border-radius: 16px;
         padding: 35px;
         margin: 25px 0;
@@ -131,6 +133,7 @@ st.markdown("""
         border-radius: 12px;
         margin: 0;
         background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        color: #333333;
         border: 1px solid #dee2e6;
         transition: all 0.3s ease;
         box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -176,6 +179,7 @@ st.markdown("""
         margin: 25px 0;
         padding: 20px;
         background: rgba(255,255,255,0.8);
+        color: #333333;
         border-radius: 10px;
         border-left: 4px solid #3498db;
     }
@@ -236,6 +240,7 @@ st.markdown("""
     }
     .info-box {
         background: linear-gradient(135deg, #ecf0f1 0%, #f8f9fa 100%);
+        color: #333333;
         border-radius: 10px;
         padding: 20px;
         margin: 20px 0;
@@ -376,14 +381,13 @@ def main():
             image = Image.open(uploaded_file)
             st.session_state.uploaded_image = image
 
-            col1, col2 = st.columns([1, 2])
+            col_img1, col_img2, col_img3 = st.columns([1, 2, 1])
+            with col_img2:
+                st.image(image, caption="Uploaded MRI Scan", use_container_width=True)
 
-            with col1:
-                st.image(image, caption="Uploaded MRI Scan", width=300)
-
-            with col2:
+            st.markdown("---")
+            with st.container():
                 st.markdown("### 📋 Scan Details & Preview")
-                st.markdown('<div class="info-box">', unsafe_allow_html=True)
 
                 col_a, col_b = st.columns(2)
                 with col_a:
@@ -394,16 +398,7 @@ def main():
                     st.write(f"**🖼️ Dimensions:** {image.size[0]} × {image.size[1]} pixels")
                     st.write(f"**🎨 Format:** {image.format}")
 
-                st.markdown("**💡 Image Quality Check:**")
-                # Simple quality assessment
-                if image.size[0] < 256 or image.size[1] < 256:
-                    st.warning("⚠️ Image resolution is quite low. Higher resolution scans provide better analysis accuracy.")
-                elif image.size[0] > 2000 or image.size[1] > 2000:
-                    st.info("ℹ️ High-resolution image detected. This is good for accurate analysis!")
-                else:
-                    st.success("✅ Image resolution looks good for analysis.")
 
-                st.markdown('</div>', unsafe_allow_html=True)
 
                 # Analysis readiness check
                 st.markdown("### 🎯 Ready for Analysis?")
@@ -435,14 +430,13 @@ def main():
         st.markdown("### ⚙️ Step 2: AI Analysis in Progress")
 
         if st.session_state.uploaded_image:
-            col1, col2 = st.columns([1, 2])
+            col_img1, col_img2, col_img3 = st.columns([1, 2, 1])
+            with col_img2:
+                st.image(st.session_state.uploaded_image, caption="Analyzing...", use_container_width=True)
 
-            with col1:
-                st.image(st.session_state.uploaded_image, caption="Analyzing...", width=300)
-
-            with col2:
-                st.markdown("### 🔍 AI Analysis in Progress")
-                st.markdown('<div class="info-box">', unsafe_allow_html=True)
+            st.markdown("---")
+            st.markdown("### 🔍 AI Analysis in Progress")
+            with st.container():
                 st.write("Our advanced deep learning model is carefully analyzing your brain scan...")
 
                 progress_bar = st.progress(0)
@@ -493,8 +487,6 @@ def main():
                 st.session_state.analyzing = False
                 st.rerun()
 
-                st.markdown('</div>', unsafe_allow_html=True)
-
     # Results Section
     elif st.session_state.detection_step == 'results':
         st.markdown("### 📊 Step 3: Analysis Results")
@@ -503,12 +495,12 @@ def main():
             result = st.session_state.analysis_result
             tumor_info = get_tumor_info(result['tumor_type'])
 
-            col1, col2 = st.columns([1, 2])
+            col_img1, col_img2, col_img3 = st.columns([1, 2, 1])
+            with col_img2:
+                st.image(result['image'], caption="Analyzed MRI Scan", use_container_width=True)
 
-            with col1:
-                st.image(result['image'], caption="Analyzed MRI Scan", width=300)
-
-            with col2:
+            st.markdown("---")
+            with st.container():
                 # Main Result Card
                 st.markdown(f"""
                 <div class="result-card {tumor_info['color']}">

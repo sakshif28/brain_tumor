@@ -20,6 +20,7 @@ st.markdown("""
     }
     .admin-card {
         background-color: white;
+        color: #333333;
         border-radius: 12px;
         padding: 20px;
         margin: 10px 0;
@@ -28,6 +29,7 @@ st.markdown("""
     }
     .metric-card {
         background-color: white;
+        color: #333333;
         border-radius: 12px;
         padding: 20px;
         text-align: center;
@@ -49,6 +51,7 @@ st.markdown("""
     }
     .alert-card {
         background-color: #fff3cd;
+        color: #333333;
         border: 1px solid #ffeaa7;
         border-radius: 8px;
         padding: 15px;
@@ -56,6 +59,7 @@ st.markdown("""
     }
     .patient-table {
         background-color: white;
+        color: #333333;
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -80,6 +84,7 @@ st.markdown("""
     }
     .sidebar-admin {
         background-color: #f8f9fa;
+        color: #333333;
         padding: 20px;
         border-radius: 10px;
         margin-bottom: 20px;
@@ -159,7 +164,6 @@ def main():
 
     # Sidebar Navigation
     with st.sidebar:
-        st.markdown('<div class="sidebar-admin">', unsafe_allow_html=True)
         st.markdown("### 👨‍⚕️ Admin Panel")
 
         if st.button("📊 Dashboard", key="admin_nav_dashboard", use_container_width=True):
@@ -181,8 +185,6 @@ def main():
             st.session_state.user_role = None
             st.success("Logged out successfully")
             st.switch_page("pages/home.py")
-
-        st.markdown('</div>', unsafe_allow_html=True)
 
     # Main Content
     current_page = st.session_state.get('admin_page', 'dashboard')

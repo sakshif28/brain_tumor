@@ -28,6 +28,7 @@ st.markdown("""
     }
     .metric-card {
         background-color: white;
+        color: #333333;
         border-radius: 12px;
         padding: 20px;
         text-align: center;
@@ -49,6 +50,7 @@ st.markdown("""
     }
     .quick-action-card {
         background-color: #f8f9fa;
+        color: #333333;
         border-radius: 12px;
         padding: 20px;
         margin: 10px 0;
@@ -64,6 +66,7 @@ st.markdown("""
     }
     .scan-history-card {
         background-color: white;
+        color: #333333;
         border-radius: 10px;
         padding: 15px;
         margin: 10px 0;
@@ -78,6 +81,7 @@ st.markdown("""
     }
     .sidebar-nav {
         background-color: #f8f9fa;
+        color: #333333;
         padding: 20px;
         border-radius: 10px;
         margin-bottom: 20px;
@@ -142,7 +146,6 @@ def main():
 
     # Sidebar Navigation
     with st.sidebar:
-        st.markdown('<div class="sidebar-nav">', unsafe_allow_html=True)
         st.markdown("### 🧠 Navigation")
 
         if st.button("📊 Dashboard", key="nav_dashboard", use_container_width=True):
@@ -167,8 +170,6 @@ def main():
             st.session_state.user_role = None
             st.success("Logged out successfully")
             st.switch_page("pages/home.py")
-
-        st.markdown('</div>', unsafe_allow_html=True)
 
     # Main Content
     current_page = st.session_state.get('dashboard_page', 'dashboard')
@@ -239,31 +240,25 @@ def show_main_dashboard(user_data, scan_history):
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.markdown('<div class="quick-action-card">', unsafe_allow_html=True)
         st.markdown("### 🔬 New Scan")
         st.write("Upload a new MRI for analysis")
         if st.button("Start Analysis", key="quick_scan"):
             st.session_state.dashboard_page = "upload"
             st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
 
     with col2:
-        st.markdown('<div class="quick-action-card">', unsafe_allow_html=True)
         st.markdown("### 📋 View History")
         st.write("Review your scan history")
         if st.button("View History", key="quick_history"):
             st.session_state.dashboard_page = "history"
             st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
 
     with col3:
-        st.markdown('<div class="quick-action-card">', unsafe_allow_html=True)
         st.markdown("### 📄 Get Report")
         st.write("Download your latest report")
         if st.button("Download Report", key="quick_report"):
             st.session_state.dashboard_page = "reports"
             st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
 
     # Recent Activity
     st.markdown("### 🕒 Recent Activity")
@@ -282,7 +277,7 @@ def show_upload_page():
     st.markdown('<h1 class="dashboard-header">📤 Upload MRI Scan</h1>', unsafe_allow_html=True)
 
     st.markdown("""
-    <div style="background-color: #e7f3ff; border: 1px solid #b3d7ff; border-radius: 10px; padding: 20px; margin: 20px 0;">
+    <div style="background-color: #e7f3ff; border: 1px solid #b3d7ff; border-radius: 10px; padding: 20px; margin: 20px 0; color: #333333;">
         <h4 style="color: #0066cc; margin-top: 0;">📋 Upload Instructions</h4>
         <ul>
             <li>Upload clear, high-resolution MRI brain scans</li>
@@ -429,7 +424,7 @@ def show_profile_page(user_data):
 
     with col1:
         st.markdown("""
-        <div style="text-align: center; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
+        <div style="text-align: center; padding: 20px; background-color: #f8f9fa; border-radius: 10px; color: #333333;">
             <div style="font-size: 4em;">👤</div>
             <h3>Patient Profile</h3>
         </div>

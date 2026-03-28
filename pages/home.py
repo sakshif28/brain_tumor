@@ -24,6 +24,7 @@ st.markdown("""
     }
     .card {
         background-color: #f8f9fa;
+        color: #333333;
         border-radius: 15px;
         padding: 25px;
         margin: 15px 0;
@@ -48,6 +49,7 @@ st.markdown("""
     }
     .stats-card {
         background-color: white;
+        color: #333333;
         border-radius: 12px;
         padding: 20px;
         text-align: center;
@@ -251,7 +253,7 @@ def main():
 
     # Call to Action
     st.markdown("""
-    <div style="background-color: #f8f9fa; padding: 40px; border-radius: 15px; text-align: center; margin: 40px 0;">
+    <div style="background-color: #f8f9fa; padding: 40px; border-radius: 15px; text-align: center; margin: 40px 0; color: #333333;">
         <h2 style="color: #0066cc; margin-bottom: 20px;">Ready to Get Started?</h2>
         <p style="font-size: 1.2em; margin-bottom: 30px;">Join thousands of healthcare professionals using our AI-powered diagnostic platform</p>
         <a href="#" class="btn-primary" onclick="document.querySelector('button[key=detect_btn]').click()">Start Detection Now</a>

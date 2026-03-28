@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 
 st.set_page_config(
     page_title="Brain Tumor Detection - Login",
@@ -14,6 +15,7 @@ st.markdown("""
         margin: 0 auto;
         padding: 40px;
         background-color: #f8f9fa;
+        color: #333333;
         border-radius: 15px;
         box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
@@ -186,7 +188,7 @@ def main():
         # Additional fields for admin
         if st.session_state.login_role == 'admin':
             st.markdown("""
-            <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 5px; padding: 10px; margin: 10px 0;">
+            <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 5px; padding: 10px; margin: 10px 0; color: #333333;">
                 <strong>⚠️ Restricted Access:</strong> This section is for authorized medical personnel only.
             </div>
             """, unsafe_allow_html=True)

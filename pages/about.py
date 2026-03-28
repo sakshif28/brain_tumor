@@ -18,6 +18,7 @@ st.markdown("""
     }
     .section-card {
         background-color: #f8f9fa;
+        color: #333333;
         border-radius: 15px;
         padding: 30px;
         margin: 20px 0;
@@ -27,6 +28,7 @@ st.markdown("""
     .team-member {
         text-align: center;
         background-color: white;
+        color: #333333;
         border-radius: 12px;
         padding: 20px;
         margin: 15px;
@@ -61,6 +63,7 @@ st.markdown("""
     }
     .stat-item {
         background-color: white;
+        color: #333333;
         padding: 25px;
         border-radius: 12px;
         text-align: center;
@@ -72,6 +75,7 @@ st.markdown("""
     }
     .timeline-item {
         background-color: #f8f9fa;
+        color: #333333;
         border-radius: 10px;
         padding: 20px;
         margin: 20px 0;
@@ -199,7 +203,7 @@ def main():
     # Medical Disclaimer
     st.markdown("## ⚕️ Medical Disclaimer")
     st.markdown("""
-    <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 10px; padding: 20px; margin: 20px 0;">
+    <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 10px; padding: 20px; margin: 20px 0; color: #333333;">
         <h4 style="color: #856404; margin-top: 0;">⚠️ Important Medical Notice</h4>
         <p><strong>This AI system is designed to assist healthcare professionals, not replace them.</strong></p>
         <ul>
@@ -217,19 +221,19 @@ def main():
     <div class="section-card">
         <h3>What's Next for Brain Tumor Detection</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            <div style="background-color: white; padding: 20px; border-radius: 10px; border-left: 4px solid #0066cc;">
+            <div style="background-color: white; padding: 20px; border-radius: 10px; border-left: 4px solid #0066cc; color: #333333;">
                 <h4>🔬 DICOM Support</h4>
                 <p>Full support for medical imaging standards including DICOM files and 3D imaging</p>
             </div>
-            <div style="background-color: white; padding: 20px; border-radius: 10px; border-left: 4px solid #008080;">
+            <div style="background-color: white; padding: 20px; border-radius: 10px; border-left: 4px solid #008080; color: #333333;">
                 <h4>📱 Mobile App</h4>
                 <p>Dedicated mobile applications for iOS and Android devices</p>
             </div>
-            <div style="background-color: white; padding: 20px; border-radius: 10px; border-left: 4px solid #28a745;">
+            <div style="background-color: white; padding: 20px; border-radius: 10px; border-left: 4px solid #28a745; color: #333333;">
                 <h4>🏥 Hospital Integration</h4>
                 <p>Direct integration with hospital information systems and PACS</p>
             </div>
-            <div style="background-color: white; padding: 20px; border-radius: 10px; border-left: 4px solid #dc3545;">
+            <div style="background-color: white; padding: 20px; border-radius: 10px; border-left: 4px solid #dc3545; color: #333333;">
                 <h4>🌍 Multi-Language</h4>
                 <p>Support for multiple languages and international medical standards</p>
             </div>
